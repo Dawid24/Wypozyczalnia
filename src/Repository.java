@@ -15,6 +15,13 @@ public class Repository {
         }
     }
 
+    public static void returnCar(int index) {
+
+        if (carsList.get(index).getStatus() == Status.RENT) {
+            carsList.get(index).setStatus(Status.FREE);
+        }
+    }
+
     public static void printData() {
         System.out.println(carsList);
     }
