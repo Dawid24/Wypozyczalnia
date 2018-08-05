@@ -26,4 +26,34 @@ public class GUI {
             throw new ParsePriceException();
         }
     }
+
+    public static void login() {
+        System.out.println("Witamy!");
+        System.out.println("Podaj login: ");
+        Scanner scanner = new Scanner(System.in);
+        String login = scanner.nextLine();
+        System.out.println("Podaj hasło: ");
+        String password = scanner.nextLine();
+        boolean authFlag = Repository.authenticateUser(login, password);
+        System.out.println(authFlag);
+        if (authFlag) {
+            menu();
+        } else {
+            System.exit(0);
+        }
+    }
+
+    public static void menu() {
+        System.out.println("1. Exit");
+        System.out.println("");
+        System.out.println("Podaj wybór: ");
+        Scanner scanner = new Scanner(System.in);
+        String chosen = scanner.nextLine();
+        switch (chosen) {
+            case "1":
+                System.exit(0);
+                break;
+            case "2":
+        }
+    }
 }
